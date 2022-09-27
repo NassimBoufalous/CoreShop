@@ -1,4 +1,8 @@
-
+import { Home } from "./Home.js";
+import { Collection } from "./Collection.js";
+import { Limites } from "./Limites.js";
+import { Support } from "./Support.js";
+import { About } from "./About.js";
 function setCss(l,z,a)
 {
     l.style[z] = a;
@@ -12,12 +16,11 @@ function setClass(l,a)
 } 
 
 
-
 let img = document.createElement("img");
 img.src="./logo.png";
 setCss(img,"text-align","center");
 
-let p = document.createElement("p");
+
 let n = document.createElement("navbar");
 n.classList="navbar navbar-expand-lg navbar-light bg-ligh";
 n.style.backgroundColor='#758F69';
@@ -63,12 +66,14 @@ for (var i = 0; i < a.length; i++) {
 
 
 let l = document.createElement("li");
-setClass(l,"nav-link");
-setCss(l,"color","White");
-setCss(l,"font-family","Regular");
-setCss(l,"font-size","42px");
+let el = document.createElement("a");
+
+setCss(el,"color","White");
+setCss(el,"font-family","Regular");
+setCss(el,"font-size","42px");
 setCss(l,"margin-left","7%");
 setCss(l,"margin-right","7%");
+
 
 
 
@@ -77,25 +82,34 @@ let textL=document.createTextNode(a[i]);
 
 
 
-l.appendChild(textL);
+el.appendChild(textL);
+l.appendChild(el);
+
 
 n.appendChild(l);
 
 
-p.appendChild(n);
+
 if(i==1)
 n.appendChild(img);
 if(i==a.length-1)
 {
 setCss(l,"margin-right","1%");
-console.log("d");
-}
-
-
-document.body.appendChild(p);
 
 }
+
+
+
+
+}
+
+document.body.appendChild(n);
 document.body.appendChild(form);
+document.body.appendChild(Collection);
+
+
+
+
 
 
 
