@@ -14,6 +14,9 @@ function setClass(l,a)
 {
     l.classList=a;
 } 
+function salut()
+{console.log("hell world");
+}
 
 
 let img = document.createElement("img");
@@ -58,7 +61,7 @@ form.appendChild(button);
 
 
 
-let a=["Collection","Limités","Support","À propos",];
+let a=["Collection","Limités","Support","About",];
 
 for (var i = 0; i < a.length; i++) {
     
@@ -67,12 +70,14 @@ for (var i = 0; i < a.length; i++) {
 
 let l = document.createElement("li");
 let el = document.createElement("a");
-
+el.onClick=salut();
+setClass(el,"kinda-link");
 setCss(el,"color","White");
 setCss(el,"font-family","Regular");
 setCss(el,"font-size","42px");
 setCss(l,"margin-left","7%");
 setCss(l,"margin-right","7%");
+
 
 
 
@@ -105,7 +110,9 @@ setCss(l,"margin-right","1%");
 
 document.body.appendChild(n);
 document.body.appendChild(form);
-document.body.appendChild(Collection);
+
+
+
 
 
 
