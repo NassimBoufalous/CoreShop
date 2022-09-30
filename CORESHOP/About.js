@@ -1,5 +1,5 @@
 export const About = document.createElement("div");
 const p =document.createElement("p");
-const txt = document.createTextNode("About");
-p.appendChild(txt);
+const txtA = document.createTextNode("About");
+p.appendChild(txtA);
 About.appendChild(p);

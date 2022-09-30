@@ -1,0 +1,131 @@
+/// Setup
+/// ============================
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body,
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+$color-grey:  #374151;
+
+* {
+  box-sizing: border-box;
+}
+
+/// Starting form
+/// ============================
+.form {
+  padding: 2rem;
+  
+  &__title {
+    color: $color-grey;
+    margin-bottom: .5rem;
+  }
+
+  .fields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 1fr); // j'ai pas trouvé comment fix autrement la taille de la bio sur mobile
+    grid-gap: 1rem;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    
+    @media screen and (max-width: 768px) {
+      grid-auto-flow: column;
+      grid-template-columns: 1fr;
+      column-gap: 0;
+    }
+  }
+
+  hr {
+    height: 2px;
+    border: 0;
+    background-color: #D7DBDF;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio {
+    grid-row: span 2;
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-flow: column nowrap;
+
+    input,
+    textarea {
+      flex-grow: 1;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      height: 40px;
+      padding: .5rem;
+    }
+
+    label {
+      color: #000;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .newsletter {
+    grid-column: span 3;
+    display: flex;
+    flex-wrap: wrap;
+
+    > .group {
+      display: flex;
+      align-items: center;
+    }
+
+    [type=checkbox] {
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+
+    label {
+      margin-right: 1rem;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  .submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
+    
+    [type="submit"] {
+      border: 0;
+      background-color: #5850EB;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color .4s;
+      
+      &:hover,
+      &:focus {
+        background-color: darken(#5850EB, 10%);
+      }
+      
+      &:active {
+        background-color: darken(#5850EB, 15%);
+        transition: background-color 0s;
+      }
+    }
+  }
+}
